@@ -1,0 +1,9 @@
+Final/Data/Data_Code/__pycache__/
+Final/Data/Data_Code/.ipynb_checkpoints/
+
+Final/Data/Raw_Data/*
+!Final/Data/Raw_Data/.gitkeep
+
+Final/Data/Pure_Data/*
+!Final/Data/Pure_Data/.gitkeep
+!Final/Data/Pure_Data/preprocessing_summary.json

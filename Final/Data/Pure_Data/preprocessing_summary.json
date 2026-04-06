@@ -1,0 +1,19 @@
+{
+  "raw_recipe_rows": 231637,
+  "raw_interaction_rows": 1132367,
+  "clean_recipe_rows": 230543,
+  "clean_interaction_rows": 1071520,
+  "filtered_interaction_rows": 535047,
+  "filtered_recipe_count": 40027,
+  "filtered_user_count": 17034,
+  "min_user_ratings": 5,
+  "min_recipe_ratings": 5,
+  "output_files": [
+    "recipes_clean.csv",
+    "interactions_clean.csv",
+    "interactions_filtered.csv",
+    "recipe_model_table.csv",
+    "preprocessing_summary.json",
+    "user_statistics.csv"
+  ]
+}
