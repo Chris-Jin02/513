@@ -1,4 +1,4 @@
-# NutriMatch EDA Summary
+# Version A EDA Summary
 
 ## Purpose
 
@@ -9,9 +9,9 @@ This folder contains the exploratory data analysis materials for the NutriMatch 
 - the use of temporal holdout evaluation instead of only random splits
 - the practical relevance of recipe metadata such as preparation time, tags, and nutrition
 
-The main reproducible notebook is:
+The main reproducible notebook for Version A is:
 
-- `Final/EDA/EDA_0/recipe_eda.ipynb`
+- `Final/Version_A/EDA/version_a_recipe_eda.ipynb`
 
 The notebook reads from:
 
@@ -19,7 +19,7 @@ The notebook reads from:
 
 and saves figures into:
 
-- `Final/EDA/EDA_0/Figures`
+- `Final/Version_A/EDA/Figures`
 
 ## Data Snapshot
 
@@ -91,7 +91,7 @@ These figures are intended to be reused in the final report and presentation.
 
 To regenerate the EDA figures and notebook outputs, run the notebook at:
 
-- `Final/EDA/EDA_0/recipe_eda.ipynb`
+- `Final/Version_A/EDA/version_a_recipe_eda.ipynb`
 
 The notebook assumes the data pipeline has already been run and that the current files exist under `Final/Data/Pure_Data`.
 
