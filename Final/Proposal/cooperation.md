@@ -1,6 +1,6 @@
 ## 协作
 
-看板：https://github.com/orgs/CS-546-B-FP/projects
+看板：https://github.com/users/Chris-Jin02/projects/3
 
 看板上的任务先认领再开始做，一个任务默认只由一个人主负责, 领完issue之后注意要在issue右侧Assignees把自己加进去
 
