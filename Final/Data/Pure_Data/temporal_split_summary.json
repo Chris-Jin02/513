@@ -1,0 +1,16 @@
+{
+  "split_strategy": "per_user_temporal_holdout_last_interaction",
+  "eligible_eval_user_count": 55547,
+  "single_interaction_user_count": 139921,
+  "train_interaction_rows": 1011734,
+  "test_interaction_rows": 55547,
+  "train_filtered_interaction_rows": 507043,
+  "train_filtered_user_count": 14879,
+  "train_filtered_recipe_count": 38636,
+  "test_filtered_interaction_rows": 10069,
+  "test_filtered_user_count": 10069,
+  "test_filtered_recipe_count": 5973,
+  "users_below_min_support_in_train": 176721,
+  "recipes_below_min_support_in_train": 172655,
+  "test_rows_dropped_for_cf_evaluation": 45478
+}

@@ -1,0 +1,31 @@
+{
+  "raw_recipe_rows": 231637,
+  "raw_interaction_rows": 1132367,
+  "clean_recipe_rows": 230543,
+  "clean_interaction_rows_before_recipe_alignment": 1071520,
+  "clean_interaction_rows": 1067281,
+  "dropped_interactions_missing_clean_recipe": 4239,
+  "clean_user_count": 195468,
+  "clean_interacted_recipe_count": 225530,
+  "filtered_interaction_rows": 533018,
+  "filtered_recipe_count": 39844,
+  "filtered_user_count": 16973,
+  "recipes_with_clean_history": 225530,
+  "recipes_eligible_for_cf": 39844,
+  "users_eligible_for_cf": 16973,
+  "min_user_ratings": 5,
+  "min_recipe_ratings": 5,
+  "output_files": [
+    "recipes_clean.csv",
+    "interactions_clean.csv",
+    "interactions_filtered.csv",
+    "interactions_train.csv",
+    "interactions_test.csv",
+    "interactions_train_filtered.csv",
+    "interactions_test_filtered.csv",
+    "recipe_model_table.csv",
+    "user_statistics.csv",
+    "preprocessing_summary.json",
+    "temporal_split_summary.json"
+  ]
+}

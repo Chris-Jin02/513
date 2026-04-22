@@ -1,0 +1,8 @@
+.DS_Store
+Data_Code/.ipynb_checkpoints/
+Data_Code/__pycache__/
+Raw_Data/
+Pure_Data/*.csv
+Pure_Data/model_a_outputs/
+!Pure_Data/preprocessing_summary.json
+!Pure_Data/temporal_split_summary.json
