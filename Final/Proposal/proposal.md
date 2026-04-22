@@ -242,7 +242,7 @@ All of these are feasible on standard laptops. No heavy deep learning training i
 Our final submission will include:
 
 - a cleaned and documented data pipeline
-- an EDA notebook with report-ready figures
+- version-specific EDA and experiment materials built on the shared data pipeline
 - popularity-based, content-based, and collaborative-filtering baselines
 - a final hybrid recommender
 - comparison tables and evaluation figures
@@ -251,28 +251,32 @@ Our final submission will include:
 - a final report with references and documentation
 
 ## 9. Team Work Division
-To keep the workload balanced for a three-person group, we propose the following split:
+To keep the workload balanced for a three-person group, we will use one shared data foundation plus three parallel model versions.
 
-### Member A: Data and Content Pipeline
+### Shared Foundation
 - maintain and document the completed data pipeline
-- finish EDA and visualization
-- implement the content-based recommender
+- keep the processed train/test artifacts fixed for fair comparison
 
-### Member B: Collaborative Filtering and Evaluation
-- build the user-item matrix
-- implement kNN and possibly SVD collaborative models
-- define and run the train/test evaluation pipeline
+### Member A: Version A
+- build a complete model line using the shared data
+- maintain version-specific EDA, experiments, and results
+- likely focus on popularity and content-based recommendation
 
-### Member C: Hybrid System, Demo, and Presentation
-- implement hybrid ranking logic
-- add dietary and time filtering
-- prepare the demo and presentation materials
+### Member B: Version B
+- build a complete model line using the shared data
+- maintain version-specific EDA, experiments, and results
+- likely focus on collaborative filtering
+
+### Member C: Version C
+- build a complete model line using the shared data
+- maintain version-specific EDA, experiments, and results
+- likely focus on hybrid recommendation or another distinct model family
 
 ### Shared Responsibilities
-- refine the problem framing
-- interpret model results
-- write the final report
-- polish the final presentation
+- keep evaluation rules aligned across versions
+- interpret model results together
+- decide the final system story
+- write the final report and polish the presentation
 
 ## 10. Workload and Compute Control
 This project is designed to look ambitious while remaining technically manageable.
@@ -294,19 +298,18 @@ This keeps the project realistic for a three-person team while still leaving roo
 - built the reproducible data cleaning pipeline
 - generated cleaned recipe and interaction tables
 - applied collaborative-filtering support thresholds
+- completed initial version-level EDA materials
 
 ### Next Phase
-- complete EDA and report-ready figures
-- implement the popularity baseline
-- finalize the content-based recommender
+- each member creates version-specific EDA inside their own version folder
+- each member builds the first end-to-end experiment for their chosen model line
 
 ### Following Phase
-- implement collaborative-filtering models
-- create the temporal evaluation split
-- compare baseline and collaborative methods
+- improve and tune each version's experiments
+- compare results across the three version tracks under the same temporal split
 
 ### Final Phase
-- build the hybrid recommender
+- finalize the best version or hybrid system
 - run final comparisons and create result tables
 - prepare the demo, slides, and final paper
 - optionally add the explanation layer if time permits

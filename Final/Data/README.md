@@ -2,6 +2,11 @@
 
 This folder contains the reproducible Food.com data pipeline for the final project.
 
+## Role in the current project framework
+
+`Final/Data` is the shared technical base for the whole project.
+All model versions should read from `Pure_Data/`, and no one should duplicate the full preprocessing workflow inside `Version_A`, `Version_B`, or `Version_C`.
+
 ## Small files that are safe to track in Git
 
 - `Data_Code/foodcom_data_pipeline.py`
@@ -55,6 +60,8 @@ Key outputs in `Pure_Data/`:
 - Use `interactions_filtered.csv` for global collaborative-filtering exploration on the fully cleaned dataset.
 - Use `interactions_train_filtered.csv` and `interactions_test_filtered.csv` for collaborative-filtering model evaluation.
 - Use `recipe_model_table.csv` for content-based and hybrid models because it preserves the full recipe universe while exposing both clean and filtered history fields.
+
+In the current framework, each version folder should use these shared outputs for its own EDA, experiments, and results.
 
 ## Important modeling note
 
