@@ -42,12 +42,17 @@ Important:
 
 ### Version A
 Suggested direction:
-- popularity baseline
-- content-based recommendation
+- lightweight metadata-first recommendation
+- Bayesian popularity baseline
+- TF-IDF content-based recommendation
+- user-profile content recommendation
+- content plus popularity reranking
 
 Main purpose:
-- provide the strongest non-collaborative baseline
-- handle recipes that still have useful metadata even if interaction history is weak
+- provide the strongest non-collaborative model line
+- handle users and recipes with weak collaborative history
+- give the final comparison a strong, interpretable metadata-based alternative
+- stay computationally light enough for normal laptop experiments
 
 ### Version B
 Suggested direction:
