@@ -1,20 +1,50 @@
 # Version A Workflow
 
-This folder is for your recommendation version.
+Version A is the lightweight metadata-first recommendation track.
 
-Recommended order:
-1. add your own EDA note or notebook in `EDA/`
-2. build, fit, validate, and tune the main model in `Experiments/`
-3. save metric tables, recommendation examples, and final outputs in `Results/`
-4. summarize strengths, weaknesses, and example recommendations in `Notes/`
+## Recommended order
 
-Recommended model direction:
-- popularity baseline
-- content-based recommendation
+1. Keep the existing EDA as the evidence base.
+2. Implement a train-only Bayesian popularity baseline.
+3. Implement TF-IDF item-to-item recipe similarity.
+4. Implement user-profile content recommendation from liked recipes.
+5. Add a lightweight content-plus-popularity reranker.
+6. Evaluate the models under the shared temporal split.
+7. Save metric tables, recommendation examples, and short conclusions in `Results/`.
 
-Shared inputs:
-- `Final/Data/Pure_Data`
+## Model priority
 
-Important:
-- do not redo raw data cleaning here
-- keep this version comparable to `Version_B` and `Version_C`
+Build in this order:
+
+| Priority | Model | Reason |
+| --- | --- | --- |
+| 1 | A0 Bayesian popularity | Fast baseline and sanity check |
+| 2 | A2 TF-IDF item similarity | Core content model and demo-friendly examples |
+| 3 | A3 user-profile content | Personalized recommendation without heavy training |
+| 4 | A4 content plus popularity rerank | Best candidate for Version A final result |
+| 5 | Optional SVD content model | Only if the main models run comfortably |
+
+## Evaluation rule
+
+Primary comparison should use the same temporal setup as the other versions:
+
+- train from `interactions_train_filtered.csv` when comparing directly with CF models
+- test on `interactions_test_filtered.csv`
+- report Precision@10, Recall@10, NDCG@10, catalog coverage, and runtime
+
+Secondary analysis may use `interactions_train.csv` and `interactions_test.csv` to show that content-based methods cover more sparse users and recipes than collaborative filtering.
+
+## Runtime guardrails
+
+- Do not build a full recipe-by-recipe similarity matrix.
+- Use sparse TF-IDF operations and retrieve only top candidates.
+- Start evaluation on a sampled user set, then scale to the filtered test users.
+- Keep TF-IDF feature limits moderate, for example `20,000` to `30,000` features.
+- Treat `TruncatedSVD` as optional, not required.
+
+## Important
+
+- Do not redo raw data cleaning here.
+- Use `Final/Data/Pure_Data` as the canonical input.
+- Use only train interactions to compute popularity scores during evaluation.
+- Keep this version distinct from `Version_B` collaborative filtering and `Version_C` final hybrid work.
