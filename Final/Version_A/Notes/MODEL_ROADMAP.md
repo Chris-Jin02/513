@@ -102,21 +102,27 @@ final_score =
 
 The exact weights should be tuned lightly. Avoid a large grid search. A small set such as `(0.8, 0.2)`, `(0.7, 0.25)`, and `(0.6, 0.35)` is enough.
 
-## Optional stretch
-
 ### A5 Latent semantic content model
 
-Use `TruncatedSVD` on TF-IDF features only if the main pipeline is already working and runtime is acceptable.
+Use `TruncatedSVD` on TF-IDF features as a required semantic content comparison model.
 
 Why it may help:
 
 - reduces sparse text features into broader semantic dimensions
 - may improve recommendations when exact ingredient/tag overlap is too literal
 
-Why it is optional:
+Runtime control:
 
-- it adds training time
-- it may not improve Top-N metrics enough to justify complexity
+- keep the component grid small, such as `64` and `128`
+- run sampled evaluation first
+- use A5 as a comparison point against A3's literal TF-IDF user-profile model
+
+Saved artifacts:
+
+- fitted `TruncatedSVD` object
+- SVD components
+- explained variance ratio
+- dense item embeddings
 
 ## Evaluation plan
 
@@ -140,14 +146,21 @@ Secondary sparse-coverage analysis:
 
 The secondary analysis is useful because content models can recommend across a wider recipe universe than collaborative-filtering models.
 
-## Expected final table
+## Final result table
 
 | Model | Precision@10 | Recall@10 | NDCG@10 | Coverage | Runtime | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| A0 Bayesian popularity | TBD | TBD | TBD | TBD | TBD | Non-personalized baseline |
-| A2 TF-IDF item content | TBD | TBD | TBD | TBD | TBD | Similar-recipe content model |
-| A3 User-profile content | TBD | TBD | TBD | TBD | TBD | Personalized metadata model |
-| A4 Content plus popularity rerank | TBD | TBD | TBD | TBD | TBD | Best Version A candidate |
+| A0 Bayesian popularity | 0.001003 | 0.010031 | 0.004618 | 0.000621 | 0.00349 s/user | Strong exact-match baseline, but low diversity |
+| A2 TF-IDF item content | 0.000218 | 0.002185 | 0.001134 | 0.448520 | 0.28565 s/user | Interpretable but slow item-similarity content model |
+| A3 User-profile content | 0.000268 | 0.002681 | 0.001321 | 0.457397 | 0.05787 s/user | Personalized metadata model with high coverage |
+| A4 Content plus popularity rerank | 0.000268 | 0.002681 | 0.001344 | 0.452997 | 0.06133 s/user | Final Version A model |
+| A5 SVD semantic content | 0.000209 | 0.002086 | 0.000956 | 0.595067 | 0.01562 s/user | Fast semantic comparison with highest coverage |
+
+Final interpretation:
+
+- A0 wins on exact-match metrics but is not the best final Version A model because it is non-personalized and has very low catalog coverage.
+- A4 is the final Version A model because it preserves A3's hit rate, improves NDCG@10, and maintains broad metadata-driven coverage.
+- A5 is useful as a required semantic comparison, but it did not beat A3/A4 on exact-match ranking quality.
 
 ## Risks and controls
 
