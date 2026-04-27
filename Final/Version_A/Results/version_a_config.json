@@ -1,0 +1,81 @@
+{
+  "fast_dev_mode": false,
+  "eval_user_sample_size": 1000,
+  "run_full_filtered_eval": true,
+  "run_secondary_clean_eval": false,
+  "run_svd_model": true,
+  "k_values": [
+    5,
+    10
+  ],
+  "primary_k": 10,
+  "positive_threshold": 4.0,
+  "top_seed_recipes": 5,
+  "item_similarity_pool_size": 250,
+  "rerank_pool_size": 350,
+  "max_features_default": 30000,
+  "min_df_default": 2,
+  "max_df_default": 0.95,
+  "popularity_m_values": [
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "tfidf_tuning_grid": [
+    {
+      "max_features": 10000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "max_features": 20000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "max_features": 30000,
+      "min_df": 2,
+      "ngram_range": [
+        1,
+        1
+      ]
+    },
+    {
+      "max_features": 30000,
+      "min_df": 3,
+      "ngram_range": [
+        1,
+        2
+      ]
+    }
+  ],
+  "rerank_weight_grid": [
+    {
+      "content_weight": 0.8,
+      "popularity_weight": 0.2,
+      "practical_weight": 0.0
+    },
+    {
+      "content_weight": 0.7,
+      "popularity_weight": 0.25,
+      "practical_weight": 0.05
+    },
+    {
+      "content_weight": 0.6,
+      "popularity_weight": 0.35,
+      "practical_weight": 0.05
+    }
+  ],
+  "svd_components_grid": [
+    64,
+    128
+  ]
+}

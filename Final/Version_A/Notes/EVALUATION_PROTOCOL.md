@@ -72,3 +72,14 @@ For the final report, clearly label whether metrics came from:
 - sampled filtered evaluation
 - full filtered evaluation
 - full clean temporal evaluation
+
+## Completed final evaluation
+
+The completed Version A result uses the full filtered temporal evaluation:
+
+- evaluated users: `10,069`
+- evaluation errors: `0`
+- final model: A4 Content plus popularity reranker
+- final metric table: `Final/Version_A/Results/version_a_metrics.csv`
+- full filtered confirmation table: `Final/Version_A/Results/version_a_full_filtered_metrics.csv`
+- report-facing summary: `Final/Version_A/Results/version_a_model_notes.md`
