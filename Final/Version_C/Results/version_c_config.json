@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-05-05T03:21:19.064660Z",
+  "debug_mode": false,
+  "full_run": true,
+  "k": 10,
+  "positive_threshold": 4,
+  "selected_final_model": "C0_svd64"
+}
