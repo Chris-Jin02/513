@@ -141,7 +141,7 @@ if os.path.isfile(a_path):
     print(f"  A best: {best_a['model_id']}, NDCG={best_a['ndcg_at_k']:.6f}")
 
 # Version B
-b_path = "../../Version_B/version_b_metrics.csv"
+b_path = "../../Version_B/Results/version_b_metrics.csv"
 if os.path.isfile(b_path):
     b_df = pd.read_csv(b_path)
     best_b = b_df.sort_values("ndcg_at_k", ascending=False).iloc[0]
